@@ -5,16 +5,18 @@ Created on Tue Apr 19 22:52:55 2022
 @author: arife
 """
 
+#import libraries
 import librosa
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import os
 import csv
+
+
 # Preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder, StandardScaler
-#Keras
 
 
 header = 'filename chroma_stft rmse spectral_centroid spectral_bandwidth rolloff zero_crossing_rate'
@@ -52,8 +54,7 @@ for g in genres:
             
 
 
-
-data = pd.read_csv('C:/Users/arife/Desktop/datasesdeneme.csv')
+data = pd.read_csv(csvfilepath)
 data.head()
 
 
