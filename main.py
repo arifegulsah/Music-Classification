@@ -106,29 +106,30 @@ print('test_acc: ',test_acc)
 predictions = model.predict(X_test)
 np.argmax(predictions[2])
 
-deneme = []
+maxpredicts = []
 for element in predictions:
     temp = np.argmax(element)
-    deneme.append(temp)
+    maxpredicts.append(temp)
     
-del deneme['Type']
 
-deneme.head()
-data = data.drop(['filename'],axis=1)
+y_pred = np.array(maxpredicts)
+
   
-
+"""
 from sklearn.model_selection import cross_val_predict
 y_pred = cross_val_predict(model, X_train, y_train)
+"""
 
 
-import numpy as np
-a = np.unique(y)
-print(a)
+uniques = np.unique(y)
+print(uniques)
 
 target_names = ['0blues', '1classical', '2country', '3disco', '4hiphop', '5jazz', '6metal', '7pop', '8reggae', '9rock']
 
 from sklearn.metrics import classification_report
-classification_report(y_test, deneme[2].astype(int), target_names=target_names)
+classification_report(y_test, y_pred, target_names=target_names)
 
-print(type(deneme[2]))
+print(type(y_test))
+print(type(y_pred))
+
 
