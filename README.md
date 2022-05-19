@@ -1,3 +1,3 @@
 # Music-Classification
 
-[here](Music Genre Classification.ipynb)
+[here](/Music Genre Classification.ipynb)
